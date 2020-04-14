@@ -17,8 +17,8 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-install bcmath \
     && docker-php-ext-install zip \
     && docker-php-ext-install soap
+RUN pecl install redis-5.0.2 \
+    && docker-php-ext-enable redis
 RUN curl -sS https://getcomposer.org/installer | php \
     && mv composer.phar /usr/local/bin/composer \
     && composer config -g repo.packagist composer https://mirrors.aliyun.com/composer/
-RUN a2enmod rewrite
-RUN a2enmod expires
