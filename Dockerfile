@@ -1,6 +1,6 @@
 FROM php:5.6-fpm
 RUN sed -i "s/deb.debian.org/mirrors.aliyun.com/g" /etc/apt/sources.list
-RUN sed -i "s/security.debian.org/mirrors.aliyun.com\/debian-security/g" /etc/apt/sources.list
+RUN sed -i "s/security.debian.org/mirrors.aliyun.com/g" /etc/apt/sources.list
 RUN apt-get clean
 RUN apt-get update && apt-get install -y \
         libfreetype6-dev \
